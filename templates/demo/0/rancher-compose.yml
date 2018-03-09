@@ -1,0 +1,20 @@
+version: '2'
+catalog:
+  name: "demo"
+  version: "1.0.0"
+  description: "Arvin 的 demo catalog"
+  minimum_rancher_version: v1.6.10
+  questions:
+    - variable: redis_my_env
+      description: "redis的一个环境变量"
+      label: "redis"
+      type: "string"
+      required: true
+      default: "8520"
+services:
+  nginx:
+    scale: 2
+    start_on_create: true
+  redis:
+    scale: 1
+    start_on_create: true

@@ -1,0 +1,8 @@
+name: demo
+description: |
+  Arvin 的 demo catalog
+version: "1.0.0"
+category: demo
+maintainer: Arvin
+license: MIT
+projectURL: https://github.com/Arvintian/rancher-demo-catalog

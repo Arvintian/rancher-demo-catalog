@@ -1,0 +1,20 @@
+version: '2'
+services:
+  nginx:
+    image: nginx
+    stdin_open: true
+    external_links:
+    - test/redis:testredis
+    tty: true
+    links:
+    - redis:myredis
+    labels:
+      io.rancher.container.pull_image: always
+  redis:
+    image: redis:2.8.23
+    environment:
+      MY_ENV: ${redis_my_env}
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
